@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apuntes · 2.º Curso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F5F0;
+      --surface: #FFFFFF;
+      --text: #1A1A18;
+      --muted: #6B6B67;
+      --accent: #2D5A3D;
+      --accent-light: #EAF3DE;
+      --accent-mid: #639922;
+      --border: #E0DDD6;
+      --hover: #F0EDE7;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .header-left h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .header-left p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.25rem;
+      background: var(--bg);
+      padding: 0.25rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      color: var(--muted);
+      transition: all 0.15s;
+    }
+
+    nav a.active {
+      background: var(--surface);
+      color: var(--accent);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    nav a:hover:not(.active) {
+      color: var(--text);
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+    }
+
+    .intro {
+      margin-bottom: 2rem;
+    }
+
+    .intro p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: all 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.18s;
+    }
+
+    .card:hover {
+      border-color: #C0DD97;
+      background: #FAFAF8;
+      transform: translateY(-1px);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-area {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-mid);
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    .card-arrow {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <h1>Apuntes</h1>
+    <p>ADE + Derecho · Pablo · Compartidos gratuitamente</p>
+  </div>
+  <nav>
+    <a href="1.html">1.º Curso</a>
+    <a href="2.html" class="active">2.º Curso</a>
+  </nav>
+</header>
+
+<main>
+  <div class="intro">
+    <p>Apuntes de segundo curso. Haz clic en la asignatura para acceder a la carpeta de Dropbox.</p>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="ENLACE_CONTABILIDAD_COSTES" target="_blank">
+      <span class="card-area">ADE</span>
+      <span class="card-title">Contabilidad de Costes</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_DERECHO_ADMINISTRATIVO_I" target="_blank">
+      <span class="card-area">Derecho</span>
+      <span class="card-title">Derecho Administrativo I</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_DERECHO_CIVIL_II" target="_blank">
+      <span class="card-area">Derecho</span>
+      <span class="card-title">Derecho Civil II</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_DERECHO_CONSTITUCIONAL_II" target="_blank">
+      <span class="card-area">Derecho</span>
+      <span class="card-title">Derecho Constitucional II</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_DERECHO_MERCANTIL_I" target="_blank">
+      <span class="card-area">Derecho</span>
+      <span class="card-title">Derecho Mercantil I</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_DIRECCION_ESTRATEGICA" target="_blank">
+      <span class="card-area">ADE</span>
+      <span class="card-title">Dirección Estratégica de la Empresa</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_INFERENCIA_ESTADISTICA" target="_blank">
+      <span class="card-area">ADE</span>
+      <span class="card-title">Introducción a la Inferencia Estadística</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_MACROECONOMIA" target="_blank">
+      <span class="card-area">ADE</span>
+      <span class="card-title">Macroeconomía</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+    <a class="card" href="ENLACE_MATEMATICA_FINANCIERA" target="_blank">
+      <span class="card-area">ADE</span>
+      <span class="card-title">Matemática Financiera</span>
+      <span class="card-arrow">Ver apuntes →</span>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  Apuntes compartidos gratuitamente · Si te sirven, compártelos también 🤝
+</footer>
+
+</body>
+</html>
